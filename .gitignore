@@ -52,3 +52,10 @@ compile_commands.json
 *creator.user*
 
 *_qmlcache.qrc
+
+# Visual Studio
+*.vs
+*debug
+*release
+*.vcxproj
+*.vcxproj.*
