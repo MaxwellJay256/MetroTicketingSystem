@@ -1,4 +1,28 @@
-﻿<RCC>
-    <qresource prefix="/new/prefix1">
+<RCC>
+    <qresource prefix="/maps">
+        <file>resources/maps/Line1.webp</file>
+        <file>resources/maps/Line2.webp</file>
+        <file>resources/maps/Line3.webp</file>
+        <file>resources/maps/Line4.webp</file>
+        <file>resources/maps/Line5.webp</file>
+        <file>resources/maps/Line6.webp</file>
+        <file>resources/maps/Line6_branch.webp</file>
+        <file>resources/maps/Line7.webp</file>
+        <file>resources/maps/Line8.webp</file>
+        <file>resources/maps/Line9.webp</file>
+        <file>resources/maps/Line10.webp</file>
+        <file>resources/maps/Line11.webp</file>
+        <file>resources/maps/Line12.webp</file>
+        <file>resources/maps/Line13.webp</file>
+        <file>resources/maps/Line14.webp</file>
+        <file>resources/maps/Line16.webp</file>
+        <file>resources/maps/Line20.webp</file>
+        <file>resources/maps/MetroMap.jpg</file>
+    </qresource>
+    <qresource prefix="/icons">
+        <file>resources/icons/shenzhenmetro.svg</file>
+    </qresource>
+    <qresource prefix="/docs">
+        <file>resources/FareList.csv</file>
     </qresource>
 </RCC>
