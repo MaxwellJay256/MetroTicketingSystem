@@ -4,16 +4,21 @@
 
 class Station
 {
-public:
-	int line;
+private:
 
+public:
 	QString id;
 	QString name;
+	int lineNo;
+	int index;
 
-	Station(int line, QString id, QString name) : line(line), id(id), name(name) {}
+	Station(QString id, QString name) :
+		id(id), name(name) {
+		lineNo = id.left(2).toInt();
+		index = id.right(2).toInt();
+	}
 
 	bool operator==(const Station& other) const;
-
 };
 
 QList<Station> readStation(QString fileName);

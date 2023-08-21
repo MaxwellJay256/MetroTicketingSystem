@@ -1,28 +1,45 @@
 <RCC>
     <qresource prefix="/maps">
-        <file>resources/maps/Line1.webp</file>
-        <file>resources/maps/Line2.webp</file>
-        <file>resources/maps/Line3.webp</file>
-        <file>resources/maps/Line4.webp</file>
-        <file>resources/maps/Line5.webp</file>
-        <file>resources/maps/Line6.webp</file>
-        <file>resources/maps/Line6_branch.webp</file>
-        <file>resources/maps/Line7.webp</file>
-        <file>resources/maps/Line8.webp</file>
-        <file>resources/maps/Line9.webp</file>
-        <file>resources/maps/Line10.webp</file>
-        <file>resources/maps/Line11.webp</file>
-        <file>resources/maps/Line12.webp</file>
-        <file>resources/maps/Line13.webp</file>
-        <file>resources/maps/Line14.webp</file>
-        <file>resources/maps/Line16.webp</file>
-        <file>resources/maps/Line20.webp</file>
         <file>resources/maps/MetroMap.jpg</file>
+        <file>resources/maps/Line20.png</file>
+        <file>resources/maps/Line16.png</file>
+        <file>resources/maps/Line14.png</file>
+        <file>resources/maps/Line13.png</file>
+        <file>resources/maps/Line12.png</file>
+        <file>resources/maps/Line11.png</file>
+        <file>resources/maps/Line10.png</file>
+        <file>resources/maps/Line9.png</file>
+        <file>resources/maps/Line8.png</file>
+        <file>resources/maps/Line7.png</file>
+        <file>resources/maps/Line61.png</file>
+        <file>resources/maps/Line6.png</file>
+        <file>resources/maps/Line5.png</file>
+        <file>resources/maps/Line4.png</file>
+        <file>resources/maps/Line3.png</file>
+        <file>resources/maps/Line2.png</file>
+        <file>resources/maps/Line1.png</file>
     </qresource>
     <qresource prefix="/icons">
         <file>resources/icons/shenzhenmetro.svg</file>
+        <file>resources/icons/Line1_icon.png</file>
+        <file>resources/icons/Line2_icon.png</file>
+        <file>resources/icons/Line3_icon.png</file>
+        <file>resources/icons/Line4_icon.png</file>
+        <file>resources/icons/Line5_icon.png</file>
+        <file>resources/icons/Line6_icon.png</file>
+        <file>resources/icons/Line7_icon.png</file>
+        <file>resources/icons/Line8_icon.png</file>
+        <file>resources/icons/Line9_icon.png</file>
+        <file>resources/icons/Line10_icon.png</file>
+        <file>resources/icons/Line11_icon.png</file>
+        <file>resources/icons/Line12_icon.png</file>
+        <file>resources/icons/Line14_icon.png</file>
+        <file>resources/icons/Line16_icon.png</file>
+        <file>resources/icons/Line20_icon.png</file>
+        <file>resources/icons/Line61_icon.png</file>
     </qresource>
     <qresource prefix="/docs">
         <file>resources/FareList.csv</file>
+        <file>resources/StationList.csv</file>
     </qresource>
 </RCC>

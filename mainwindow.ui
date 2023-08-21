@@ -22,7 +22,7 @@
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="pageWelcome">
        <layout class="QGridLayout" name="gridLayout">
@@ -325,13 +325,13 @@ Version:1.0.0</string>
           <property name="widgetResizable">
            <bool>true</bool>
           </property>
-          <widget class="QWidget" name="scrollAreaMap">
+          <widget class="QWidget" name="scrollArea_Map_MainMenu_Widget">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>98</width>
-             <height>39</height>
+             <width>808</width>
+             <height>633</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_2">
@@ -396,13 +396,13 @@ Version:1.0.0</string>
           <property name="widgetResizable">
            <bool>true</bool>
           </property>
-          <widget class="QWidget" name="scrollArea_3">
+          <widget class="QWidget" name="scrollArea_Map_RouteSelect_Widget">
            <property name="geometry">
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>98</width>
-             <height>39</height>
+             <width>772</width>
+             <height>633</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_4">
@@ -461,6 +461,13 @@ Version:1.0.0</string>
              <property name="text">
               <string>1号线</string>
              </property>
+             <property name="icon">
+              <iconset resource="Resource.qrc">
+               <normaloff>:/icons/resources/icons/Line1_icon.png</normaloff>:/icons/resources/icons/Line1_icon.png</iconset>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
             </widget>
            </item>
            <item>
@@ -472,6 +479,10 @@ Version:1.0.0</string>
              </property>
              <property name="text">
               <string>2号线</string>
+             </property>
+             <property name="icon">
+              <iconset resource="Resource.qrc">
+               <normaloff>:/icons/resources/icons/Line2_icon.png</normaloff>:/icons/resources/icons/Line2_icon.png</iconset>
              </property>
             </widget>
            </item>
@@ -485,6 +496,10 @@ Version:1.0.0</string>
              <property name="text">
               <string>3号线</string>
              </property>
+             <property name="icon">
+              <iconset resource="Resource.qrc">
+               <normaloff>:/icons/resources/icons/Line3_icon.png</normaloff>:/icons/resources/icons/Line3_icon.png</iconset>
+             </property>
             </widget>
            </item>
            <item>
@@ -496,6 +511,10 @@ Version:1.0.0</string>
              </property>
              <property name="text">
               <string>4号线</string>
+             </property>
+             <property name="icon">
+              <iconset resource="Resource.qrc">
+               <normaloff>:/icons/resources/icons/Line4_icon.png</normaloff>:/icons/resources/icons/Line4_icon.png</iconset>
              </property>
             </widget>
            </item>
@@ -509,6 +528,10 @@ Version:1.0.0</string>
              <property name="text">
               <string>5号线</string>
              </property>
+             <property name="icon">
+              <iconset resource="Resource.qrc">
+               <normaloff>:/icons/resources/icons/Line5_icon.png</normaloff>:/icons/resources/icons/Line5_icon.png</iconset>
+             </property>
             </widget>
            </item>
            <item>
@@ -521,10 +544,14 @@ Version:1.0.0</string>
              <property name="text">
               <string>6号线</string>
              </property>
+             <property name="icon">
+              <iconset resource="Resource.qrc">
+               <normaloff>:/icons/resources/icons/Line6_icon.png</normaloff>:/icons/resources/icons/Line6_icon.png</iconset>
+             </property>
             </widget>
            </item>
            <item>
-            <widget class="QRadioButton" name="radioLine6_branch">
+            <widget class="QRadioButton" name="radioLine61">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -532,6 +559,10 @@ Version:1.0.0</string>
              </property>
              <property name="text">
               <string>6号线支线</string>
+             </property>
+             <property name="icon">
+              <iconset resource="Resource.qrc">
+               <normaloff>:/icons/resources/icons/Line61_icon.png</normaloff>:/icons/resources/icons/Line61_icon.png</iconset>
              </property>
             </widget>
            </item>
@@ -545,6 +576,10 @@ Version:1.0.0</string>
              <property name="text">
               <string>7号线</string>
              </property>
+             <property name="icon">
+              <iconset resource="Resource.qrc">
+               <normaloff>:/icons/resources/icons/Line7_icon.png</normaloff>:/icons/resources/icons/Line7_icon.png</iconset>
+             </property>
             </widget>
            </item>
            <item>
@@ -556,6 +591,10 @@ Version:1.0.0</string>
              </property>
              <property name="text">
               <string>8号线</string>
+             </property>
+             <property name="icon">
+              <iconset resource="Resource.qrc">
+               <normaloff>:/icons/resources/icons/Line8_icon.png</normaloff>:/icons/resources/icons/Line8_icon.png</iconset>
              </property>
             </widget>
            </item>
@@ -569,6 +608,10 @@ Version:1.0.0</string>
              <property name="text">
               <string>9号线</string>
              </property>
+             <property name="icon">
+              <iconset resource="Resource.qrc">
+               <normaloff>:/icons/resources/icons/Line9_icon.png</normaloff>:/icons/resources/icons/Line9_icon.png</iconset>
+             </property>
             </widget>
            </item>
            <item>
@@ -580,6 +623,10 @@ Version:1.0.0</string>
              </property>
              <property name="text">
               <string>10号线</string>
+             </property>
+             <property name="icon">
+              <iconset resource="Resource.qrc">
+               <normaloff>:/icons/resources/icons/Line10_icon.png</normaloff>:/icons/resources/icons/Line10_icon.png</iconset>
              </property>
             </widget>
            </item>
@@ -593,6 +640,10 @@ Version:1.0.0</string>
              <property name="text">
               <string>11号线</string>
              </property>
+             <property name="icon">
+              <iconset resource="Resource.qrc">
+               <normaloff>:/icons/resources/icons/Line11_icon.png</normaloff>:/icons/resources/icons/Line11_icon.png</iconset>
+             </property>
             </widget>
            </item>
            <item>
@@ -605,17 +656,9 @@ Version:1.0.0</string>
              <property name="text">
               <string>12号线</string>
              </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QRadioButton" name="radioLine13">
-             <property name="font">
-              <font>
-               <pointsize>12</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>13号线</string>
+             <property name="icon">
+              <iconset resource="Resource.qrc">
+               <normaloff>:/icons/resources/icons/Line12_icon.png</normaloff>:/icons/resources/icons/Line12_icon.png</iconset>
              </property>
             </widget>
            </item>
@@ -629,6 +672,10 @@ Version:1.0.0</string>
              <property name="text">
               <string>14号线</string>
              </property>
+             <property name="icon">
+              <iconset resource="Resource.qrc">
+               <normaloff>:/icons/resources/icons/Line14_icon.png</normaloff>:/icons/resources/icons/Line14_icon.png</iconset>
+             </property>
             </widget>
            </item>
            <item>
@@ -641,6 +688,10 @@ Version:1.0.0</string>
              <property name="text">
               <string>16号线</string>
              </property>
+             <property name="icon">
+              <iconset resource="Resource.qrc">
+               <normaloff>:/icons/resources/icons/Line16_icon.png</normaloff>:/icons/resources/icons/Line16_icon.png</iconset>
+             </property>
             </widget>
            </item>
            <item>
@@ -652,6 +703,10 @@ Version:1.0.0</string>
              </property>
              <property name="text">
               <string>20号线</string>
+             </property>
+             <property name="icon">
+              <iconset resource="Resource.qrc">
+               <normaloff>:/icons/resources/icons/Line20_icon.png</normaloff>:/icons/resources/icons/Line20_icon.png</iconset>
              </property>
             </widget>
            </item>
@@ -691,7 +746,13 @@ Version:1.0.0</string>
             </widget>
            </item>
            <item>
-            <widget class="QListView" name="listView_Destination_RouteSelect"/>
+            <widget class="QListView" name="listView_Destination_RouteSelect">
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+              </font>
+             </property>
+            </widget>
            </item>
           </layout>
          </widget>
@@ -747,7 +808,13 @@ Version:1.0.0</string>
             </widget>
            </item>
            <item>
-            <widget class="QListView" name="listView_Start_RouteSelect"/>
+            <widget class="QListView" name="listView_Start_RouteSelect">
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+              </font>
+             </property>
+            </widget>
            </item>
           </layout>
          </widget>
@@ -814,6 +881,9 @@ Version:1.0.0</string>
                 <font>
                  <pointsize>12</pointsize>
                 </font>
+               </property>
+               <property name="text">
+                <string>大学城</string>
                </property>
                <property name="maxLength">
                 <number>20</number>
@@ -889,7 +959,7 @@ Version:1.0.0</string>
                 <bool>false</bool>
                </property>
                <property name="prefix">
-                <string>￥ </string>
+                <string>￥</string>
                </property>
                <property name="minimum">
                 <number>2</number>
@@ -1294,6 +1364,9 @@ Version:1.0.0</string>
                <property name="text">
                 <string>现金</string>
                </property>
+               <property name="autoExclusive">
+                <bool>true</bool>
+               </property>
               </widget>
              </item>
              <item row="0" column="1">
@@ -1311,6 +1384,9 @@ Version:1.0.0</string>
                </property>
                <property name="text">
                 <string>微信支付</string>
+               </property>
+               <property name="autoExclusive">
+                <bool>true</bool>
                </property>
               </widget>
              </item>
@@ -1330,6 +1406,9 @@ Version:1.0.0</string>
                <property name="text">
                 <string>支付宝</string>
                </property>
+               <property name="autoExclusive">
+                <bool>true</bool>
+               </property>
               </widget>
              </item>
              <item row="1" column="1">
@@ -1347,6 +1426,9 @@ Version:1.0.0</string>
                </property>
                <property name="text">
                 <string>数字人民币</string>
+               </property>
+               <property name="autoExclusive">
+                <bool>true</bool>
                </property>
               </widget>
              </item>
@@ -1458,7 +1540,7 @@ Version:1.0.0</string>
                 <enum>Qt::LeftToRight</enum>
                </property>
                <property name="currentIndex">
-                <number>0</number>
+                <number>2</number>
                </property>
                <widget class="QWidget" name="page_WaitAction">
                 <layout class="QGridLayout" name="gridLayout_11">
@@ -1477,12 +1559,12 @@ Version:1.0.0</string>
                <widget class="QWidget" name="page_Cash">
                 <layout class="QVBoxLayout" name="verticalLayout_5">
                  <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout_TotalPrice" stretch="1,3">
+                  <layout class="QHBoxLayout" name="horizontalLayout_TotalPrice_Cash" stretch="1,3">
                    <property name="spacing">
                     <number>4</number>
                    </property>
                    <item>
-                    <widget class="QLabel" name="label_TotalPrice">
+                    <widget class="QLabel" name="label_TotalPrice_Cash">
                      <property name="text">
                       <string>总票价：</string>
                      </property>
@@ -1492,7 +1574,7 @@ Version:1.0.0</string>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QSpinBox" name="spinBox_TotalPrice">
+                    <widget class="QSpinBox" name="spinBox_TotalPrice_Cash">
                      <property name="font">
                       <font>
                        <pointsize>18</pointsize>
@@ -1517,7 +1599,7 @@ Version:1.0.0</string>
                       <bool>false</bool>
                      </property>
                      <property name="prefix">
-                      <string>￥ </string>
+                      <string>￥</string>
                      </property>
                      <property name="minimum">
                       <number>2</number>
@@ -1539,14 +1621,14 @@ Version:1.0.0</string>
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_InsertCash">
                    <item>
-                    <widget class="QPushButton" name="btn_1yuan">
+                    <widget class="QPushButton" name="btn_01yuan">
                      <property name="text">
                       <string>￥1</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="btn_5yuan">
+                    <widget class="QPushButton" name="btn_05yuan">
                      <property name="text">
                       <string>￥5</string>
                      </property>
@@ -1601,7 +1683,7 @@ Version:1.0.0</string>
                       <bool>false</bool>
                      </property>
                      <property name="prefix">
-                      <string>￥ </string>
+                      <string>￥</string>
                      </property>
                      <property name="minimum">
                       <number>0</number>
@@ -1649,7 +1731,7 @@ Version:1.0.0</string>
                       <bool>false</bool>
                      </property>
                      <property name="prefix">
-                      <string>￥ </string>
+                      <string>￥</string>
                      </property>
                      <property name="minimum">
                       <number>0</number>
@@ -1744,7 +1826,7 @@ Version:1.0.0</string>
                 <property name="layoutDirection">
                  <enum>Qt::LeftToRight</enum>
                 </property>
-                <layout class="QVBoxLayout" name="verticalLayout_6" stretch="0,1,0">
+                <layout class="QVBoxLayout" name="verticalLayout_6" stretch="0,0,1,0">
                  <item>
                   <widget class="QLabel" name="label_ScanQRCode">
                    <property name="text">
@@ -1756,6 +1838,59 @@ Version:1.0.0</string>
                   </widget>
                  </item>
                  <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_TotalPrice_EPayment" stretch="1,3">
+                   <property name="spacing">
+                    <number>4</number>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="label_TotalPrice_EPayment">
+                     <property name="text">
+                      <string>总票价：</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QSpinBox" name="spinBox_TotalPrice_EPayment">
+                     <property name="font">
+                      <font>
+                       <pointsize>18</pointsize>
+                      </font>
+                     </property>
+                     <property name="wrapping">
+                      <bool>false</bool>
+                     </property>
+                     <property name="frame">
+                      <bool>false</bool>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                     <property name="readOnly">
+                      <bool>true</bool>
+                     </property>
+                     <property name="buttonSymbols">
+                      <enum>QAbstractSpinBox::NoButtons</enum>
+                     </property>
+                     <property name="accelerated">
+                      <bool>false</bool>
+                     </property>
+                     <property name="prefix">
+                      <string>￥</string>
+                     </property>
+                     <property name="minimum">
+                      <number>2</number>
+                     </property>
+                     <property name="maximum">
+                      <number>300</number>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
                   <widget class="QFrame" name="frame_QRCode">
                    <property name="frameShape">
                     <enum>QFrame::NoFrame</enum>
@@ -1764,7 +1899,7 @@ Version:1.0.0</string>
                     <enum>QFrame::Raised</enum>
                    </property>
                    <layout class="QGridLayout" name="gridLayout_12">
-                    <item row="1" column="0">
+                    <item row="0" column="0">
                      <widget class="QLabel" name="label_QRCode">
                       <property name="text">
                        <string>（二维码）</string>
@@ -1923,7 +2058,7 @@ Version:1.0.0</string>
               </font>
              </property>
              <property name="text">
-              <string>s后自动返回开始菜单</string>
+              <string>10s 后自动返回主菜单</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
