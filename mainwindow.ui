@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1280</width>
-    <height>732</height>
+    <height>745</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,7 +22,7 @@
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="pageWelcome">
        <layout class="QGridLayout" name="gridLayout">
@@ -330,8 +330,8 @@ Version:1.0.0</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>808</width>
-             <height>633</height>
+             <width>98</width>
+             <height>39</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_2">
@@ -402,7 +402,7 @@ Version:1.0.0</string>
              <x>0</x>
              <y>0</y>
              <width>772</width>
-             <height>633</height>
+             <height>646</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_4">
@@ -1364,6 +1364,10 @@ Version:1.0.0</string>
                <property name="text">
                 <string>现金</string>
                </property>
+               <property name="icon">
+                <iconset resource="Resource.qrc">
+                 <normaloff>:/icons/resources/icons/cash-stack.ico</normaloff>:/icons/resources/icons/cash-stack.ico</iconset>
+               </property>
                <property name="autoExclusive">
                 <bool>true</bool>
                </property>
@@ -1384,6 +1388,10 @@ Version:1.0.0</string>
                </property>
                <property name="text">
                 <string>微信支付</string>
+               </property>
+               <property name="icon">
+                <iconset resource="Resource.qrc">
+                 <normaloff>:/icons/resources/icons/wechat.ico</normaloff>:/icons/resources/icons/wechat.ico</iconset>
                </property>
                <property name="autoExclusive">
                 <bool>true</bool>
@@ -1406,6 +1414,10 @@ Version:1.0.0</string>
                <property name="text">
                 <string>支付宝</string>
                </property>
+               <property name="icon">
+                <iconset resource="Resource.qrc">
+                 <normaloff>:/icons/resources/icons/alipay.ico</normaloff>:/icons/resources/icons/alipay.ico</iconset>
+               </property>
                <property name="autoExclusive">
                 <bool>true</bool>
                </property>
@@ -1426,6 +1438,10 @@ Version:1.0.0</string>
                </property>
                <property name="text">
                 <string>数字人民币</string>
+               </property>
+               <property name="icon">
+                <iconset resource="Resource.qrc">
+                 <normaloff>:/icons/resources/icons/cny.ico</normaloff>:/icons/resources/icons/cny.ico</iconset>
                </property>
                <property name="autoExclusive">
                 <bool>true</bool>
@@ -2329,59 +2345,10 @@ Version:1.0.0</string>
           <property name="title">
            <string>站点信息</string>
           </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="2,1">
-           <item>
-            <layout class="QVBoxLayout" name="verticalLayout_10" stretch="0,1,0,2">
-             <item>
-              <widget class="QLabel" name="label_StationIntroduction">
-               <property name="font">
-                <font>
-                 <pointsize>12</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>介绍</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPlainTextEdit" name="plainTextEdit_StationIntroduction">
-               <property name="font">
-                <font>
-                 <pointsize>10</pointsize>
-                </font>
-               </property>
-               <property name="readOnly">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="label_StationExits">
-               <property name="font">
-                <font>
-                 <pointsize>12</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>站点出口信息</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QTextEdit" name="textEdit_StationExits">
-               <property name="font">
-                <font>
-                 <pointsize>10</pointsize>
-                </font>
-               </property>
-               <property name="readOnly">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,1">
            <item>
             <layout class="QVBoxLayout" name="verticalLayout_11" stretch="0,0">
              <item>
@@ -2398,14 +2365,14 @@ Version:1.0.0</string>
                 </font>
                </property>
                <property name="title">
-                <string>所在线路</string>
+                <string>查询结果</string>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_12">
                 <item>
                  <widget class="QListView" name="listView_StationLines">
                   <property name="font">
                    <font>
-                    <pointsize>10</pointsize>
+                    <pointsize>12</pointsize>
                    </font>
                   </property>
                  </widget>
@@ -2427,6 +2394,35 @@ Version:1.0.0</string>
               </spacer>
              </item>
             </layout>
+           </item>
+           <item>
+            <widget class="QScrollArea" name="scrollArea_Map_StationQuery">
+             <property name="widgetResizable">
+              <bool>true</bool>
+             </property>
+             <widget class="QWidget" name="scrollArea_Map_StationQuery_Widget">
+              <property name="geometry">
+               <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>708</width>
+                <height>601</height>
+               </rect>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_16">
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_Map_StationQuery">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
            </item>
           </layout>
          </widget>

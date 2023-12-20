@@ -37,6 +37,10 @@
         <file>resources/icons/Line16_icon.png</file>
         <file>resources/icons/Line20_icon.png</file>
         <file>resources/icons/Line61_icon.png</file>
+        <file>resources/icons/alipay.ico</file>
+        <file>resources/icons/cash-stack.ico</file>
+        <file>resources/icons/cny.ico</file>
+        <file>resources/icons/wechat.ico</file>
     </qresource>
     <qresource prefix="/docs">
         <file>resources/FareList.csv</file>

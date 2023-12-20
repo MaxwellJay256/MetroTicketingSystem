@@ -1,18 +1,19 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
-#include <QDateTime>
-#include <QTimer>
-#include <QLabel>
-#include <QScrollArea>
-#include <QRadioButton>
-#include <QStringListModel>
-#include <QImageReader>
-#include <QPalette>
-#include "Station.h"
 #include "Line.h"
 #include "Order.h"
+#include "Query.h"
+#include "Station.h"
+#include <QDateTime>
+#include <QImageReader>
+#include <QLabel>
+#include <QMainWindow>
+#include <QPalette>
+#include <QRadioButton>
+#include <QScrollArea>
+#include <QStringListModel>
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -24,10 +25,15 @@ class MainWindow : public QMainWindow
 
 private:
     QLabel* lbDateTimeDisplay;
+
+    // QPixmaps and QSizes for displaying maps
     QPixmap map_RouteSelect;
     QSize frameSize_RouteSelect;
     QPixmap map_MainMenu;
     QSize frameSize_MainMenu;
+    QPixmap map_StationQuery;
+    QSize frameSize_StationQuery;
+
     void DisplayMap(QString mapFileName, QPixmap* pixmap, QScrollArea* scrollArea, QLabel* lbMap);
 
     // InfoBar
@@ -46,6 +52,10 @@ private:
 
     QTimer *countDownTimer;
     int countDownSeconds;
+
+    /// @brief 清空站点查询界面输入的内容
+    void ClearStationQuery();
+
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
@@ -92,6 +102,9 @@ private slots:
     void on_btn_FinishPay_clicked();
     void CountDown_FinishPay();
 
+    void on_btnStartQuery_clicked();
+
+    void on_listView_StationLines_clicked(const QModelIndex &index);
 
 private:
     Ui::MainWindow *ui;

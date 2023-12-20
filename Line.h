@@ -1,13 +1,13 @@
 ﻿#pragma once
 
-#include <QList>
 #include "Station.h"
-#include <QFile>
-#include <QTextStream>
 #include <QDebug>
-#include <QStringListModel>
-#include <QStringList>
+#include <QFile>
 #include <QIcon>
+#include <QList>
+#include <QStringList>
+#include <QStringListModel>
+#include <QTextStream>
 
 class Line
 {
@@ -28,7 +28,6 @@ public:
 	Line(int number);
 
 	void AddStation(Station *station);
-
 };
 
 extern QList<Line*> lineList;

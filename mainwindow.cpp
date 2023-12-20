@@ -1,5 +1,6 @@
 ﻿#include "mainwindow.h"
 #include "ui_mainwindow.h"
+
 #define IMAGE_MB_LIMIT 250
 
 MainWindow::MainWindow(QWidget *parent)
@@ -113,10 +114,6 @@ void MainWindow::on_btnReturn_MainMenu_clicked() {
     InfoBarClear();
 }
 
-void MainWindow::on_btnGoToMap_clicked() {
-    ui->stackedWidget->setCurrentWidget(ui->pageStationQuery);
-}
-
 void MainWindow::on_actReturnHome_triggered() {
     ui->stackedWidget->setCurrentWidget(ui->pageMainMenu);
     ui->spinBox_CashInserted->setValue(0);
@@ -127,39 +124,35 @@ void MainWindow::on_actReturnHome_triggered() {
     InfoBarClear();
 }
 
-void MainWindow::on_btnGoToPurchase_MainMenu_clicked()
-{
-    ui->stackedWidget->setCurrentWidget(ui->pageRouteSelect);
-    if (map_RouteSelect.isNull())
-        on_radioMap_clicked();
-    UpdateInfo("请选择起点和终点", info);
-}
-
 void MainWindow::on_btnNext_RouteSelect_clicked() {
     if (ui->lineEdit_Start_RouteSelect->text().isEmpty() || ui->lineEdit_Destination_RouteSelect->text().isEmpty()) {
         qDebug() << "Error: Start or destination not selected yet.";
         UpdateInfo("错误：起点站或终点站未选择", error);
-    } else {
-        QList<Station*> startStationList = FindStationsByName(ui->lineEdit_Start_RouteSelect->text());
-        QList<Station*> destinationStationList = FindStationsByName(ui->lineEdit_Destination_RouteSelect->text());
-        if (startStationList.isEmpty()) {
-			qDebug() << "Error: Start station not found.";
-            UpdateInfo("错误：起点站不存在，请检查起点站输入是否正确", error);
-		} else if (destinationStationList.isEmpty()) {
-			qDebug() << "Error: Destination station not found.";
-            UpdateInfo("错误：终点站不存在，请检查终点站输入是否正确", error);
-		} else {
-            order = new Order();
-            order->SetStartStation(startStationList.first());
-            order->SetDestinationStation(destinationStationList.first());
-            order->GetUnitPrice(fareMap);
-            ui->stackedWidget->setCurrentWidget(ui->pageCheckout);
-            ui->spinBox_UnitPrice->setValue(order->unitPrice);
-            order->GetTotalPrice();
-            UpdateTotalPrice();
-            InfoBarClear();
-		}
+        return;
     }
+
+    QList<Station*> startStationList = FindStationsByName(ui->lineEdit_Start_RouteSelect->text());
+    QList<Station*> destinationStationList = FindStationsByName(ui->lineEdit_Destination_RouteSelect->text());
+    if (startStationList.isEmpty()) {
+        qDebug() << "Error: Start station not found.";
+        UpdateInfo("错误：起点站不存在，请检查起点站输入是否正确", error);
+        return;
+    }
+    if (destinationStationList.isEmpty()) {
+        qDebug() << "Error: Destination station not found.";
+        UpdateInfo("错误：终点站不存在，请检查终点站输入是否正确", error);
+        return;
+    }
+
+    order = new Order();
+    order->SetStartStation(startStationList.first());
+    order->SetDestinationStation(destinationStationList.first());
+    order->GetUnitPrice(fareMap);
+    ui->stackedWidget->setCurrentWidget(ui->pageCheckout);
+    ui->spinBox_UnitPrice->setValue(order->unitPrice);
+    order->GetTotalPrice();
+    UpdateTotalPrice();
+    InfoBarClear();
 }
 
 void MainWindow::on_btnReturn_Checkout_clicked()
@@ -324,8 +317,7 @@ void MainWindow::on_price_or_cash_changed()
         ui->spinBox_Change->setValue(ui->spinBox_CashInserted->value() - order->totalPrice);
 		ui->btn_FinishPay_Cash->setEnabled(true);
         UpdateInfo("已投入足额现金，点击“完成支付”以继续", infoType::info);
-    }
-    else {
+    } else {
         ui->spinBox_Change->setValue(0);
 		ui->btn_FinishPay_Cash->setEnabled(false);
         InfoBarClear();
@@ -345,11 +337,87 @@ void MainWindow::CountDown_FinishPay()
     if (countDownSeconds >= 0) {
         QString text = QString::number(countDownSeconds) + "s 后自动返回主菜单";
         ui->label_AutoHomeCountDown->setText(text);
-    }
-    else {
+    } else {
         countDownTimer->stop();
         ui->actReturnHome->trigger();
     }
 
+}
+
+void MainWindow::on_btnGoToMap_clicked() {
+    ClearStationQuery();
+    ui->stackedWidget->setCurrentWidget(ui->pageStationQuery);
+    UpdateInfo("请在站点名和站点编号中输入其中一个进行查找", info);
+}
+
+void MainWindow::ClearStationQuery()
+{
+    ui->lineEdit_StationName_Input->clear();
+    ui->lineEdit_StationID_Input->clear();
+    QStringListModel emptyModel;
+    ui->listView_StationLines->setModel(&emptyModel);
+}
+void MainWindow::on_btnGoToPurchase_MainMenu_clicked()
+{
+    ui->stackedWidget->setCurrentWidget(ui->pageRouteSelect);
+
+    // 初始化站点选择界面
+    if (map_RouteSelect.isNull())
+        on_radioMap_clicked();
+    UpdateInfo("请选择起点和终点", info);
+}
+
+void MainWindow::on_btnStartQuery_clicked()
+{
+    uint8_t count = 0;
+    if (!ui->lineEdit_StationName_Input->text().isEmpty())
+        count += 1;
+    if (!ui->lineEdit_StationID_Input->text().isEmpty())
+        count += 2;
+
+    switch (count)
+    {
+    case 0:
+        UpdateInfo("错误：未输入任何信息，请在站点名和站点编号中输入其中一个进行查找", error);
+        return;
+    case 3:
+        UpdateInfo("错误：只允许输入站点名和站点编号中的一个，请重试", error);
+        return;
+    case 1: { // 通过站点名查询
+        Query_Name query(ui->lineEdit_StationName_Input->text());
+        QStringListModel* model = query.StartQuery();
+        ui->listView_StationLines->setModel(query.StartQuery());
+        if (model->rowCount() == 0) {
+           	UpdateInfo("错误：未找到站点，请检查站点名输入是否正确", warning);
+			return;
+        }
+        UpdateInfo("请在站点名和站点编号中输入其中一个进行查找", info);
+    }
+        break;
+    case 2: { // 通过站点编号查询
+        Query_ID query(ui->lineEdit_StationID_Input->text());
+        QStringListModel* model = query.StartQuery();
+        ui->listView_StationLines->setModel(query.StartQuery());
+        // 如果 model 项数不为 0 ，则说明找到了站点
+        if (model->rowCount() == 0) {
+            UpdateInfo("错误：未找到站点，请检查站点编号输入是否正确", warning);
+            return;
+        }
+        UpdateInfo("请在站点名和站点编号中输入其中一个进行查找", info);
+    }
+        break;
+    default:
+        break;
+    }
+}
+
+void MainWindow::on_listView_StationLines_clicked(const QModelIndex &index)
+{
+    QString displayString = index.data().toString();
+    // listView 显示格式为 “XXXX - X 号线”，需要提取出站点编号，编号可能是 1 位数也可能是 2 位数
+    QString lineID = displayString.mid(displayString.length() - 5, 2);
+    // qDebug() << "Select line: " << lineID;
+    Line* line = FindLineByNumber(lineID.toInt());
+    DisplayMap(line->mapFileName, &map_StationQuery, ui->scrollArea_Map_StationQuery, ui->label_Map_StationQuery);
 }
 
