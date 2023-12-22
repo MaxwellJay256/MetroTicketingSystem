@@ -1,5 +1,7 @@
 ﻿#include "Query.h"
 
+static void AppendQueryResult(QStringList& queryResult, Station* station);
+
 Query::Query()
 {
     model_QueryResult = new QStringListModel();
@@ -14,7 +16,7 @@ QStringListModel* Query_ID::StartQuery(void)
     if (station == nullptr) {
 		qDebug() << "No station found.";
     } else
-        queryResult << station->name + " - " + QString::number(station->lineNo) + " 号线";
+        AppendQueryResult(queryResult, station);
 
     model_QueryResult->setStringList(queryResult);
     return model_QueryResult;
@@ -30,9 +32,20 @@ QStringListModel* Query_Name::StartQuery(void)
     }
     else {
         for (Station* station : stations) {
-            queryResult << station->name + " - " + QString::number(station->lineNo) + " 号线";
+            AppendQueryResult(queryResult, station);
         }
     }
     model_QueryResult->setStringList(queryResult);
 	return model_QueryResult;
+}
+
+static void AppendQueryResult(QStringList& queryResult, Station* station)
+{
+    QString lineNo = QString::number(station->lineNo);
+    if (lineNo != "61") { // 61 号线其实是 6 号线支线，需要特殊处理
+        queryResult << station->name + " - " + QString::number(station->lineNo) + " 号线";
+    }
+    else {
+        queryResult << station->name + " - 6 号线支线";
+    }
 }

@@ -41,7 +41,7 @@ void ReadStationInfo(const QString fileName)
         // 查找或创建对应线路，添加站点
         Line* currentLine = nullptr;
         for (Line* line : lineList) {
-            if (line->number == lineNoTemp) {
+            if (line->number == (uint)lineNoTemp) {
                 currentLine = line;
                 break;
             }
@@ -50,7 +50,7 @@ void ReadStationInfo(const QString fileName)
         if (currentLine == nullptr) {
             currentLine = new Line(lineNoTemp);
             lineList.append(currentLine);
-            qDebug() << "New line: " << lineNoTemp;
+            // qDebug() << "New line: " << lineNoTemp;
         }
 
         currentLine->AddStation(newStation);
@@ -64,7 +64,7 @@ void ReadStationInfo(const QString fileName)
 Line* FindLineByNumber(int number)
 {
     for (Line* line : lineList) {
-		if (line->number == number) {
+        if (line->number == (uint)number) {
 			return line;
 		}
 	}

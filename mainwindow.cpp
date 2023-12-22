@@ -99,7 +99,7 @@ void MainWindow::on_btnStart_Welcome_clicked() {
 void MainWindow::DisplayMap(QString mapFileName, QPixmap* pixmap, QScrollArea* scrollArea, QLabel* lbMap)
 {
     pixmap->load(mapFileName);
-    *pixmap = pixmap->scaled(scrollArea->width()-30, scrollArea->height()-30,  Qt::KeepAspectRatio);
+    *pixmap = pixmap->scaled(scrollArea->width()-30, scrollArea->height()-30,  Qt::KeepAspectRatio, Qt::SmoothTransformation);
     lbMap->setPixmap(*pixmap);
 }
 
@@ -115,6 +115,10 @@ void MainWindow::on_btnReturn_MainMenu_clicked() {
 }
 
 void MainWindow::on_actReturnHome_triggered() {
+    // 停止倒计时
+    countDownTimer->stop();
+    countDownSeconds = 10;
+
     ui->stackedWidget->setCurrentWidget(ui->pageMainMenu);
     ui->spinBox_CashInserted->setValue(0);
     if (order != nullptr) {
@@ -182,7 +186,7 @@ void MainWindow::on_radioMap_clicked()
     map_RouteSelect.load(mainMapFileName);
     map_RouteSelect = map_RouteSelect.scaled(ui->scrollArea_Map_RouteSelect->width()-30, 
 											 ui->scrollArea_Map_RouteSelect->height()-30, 
-										Qt::KeepAspectRatio);
+										Qt::KeepAspectRatio, Qt::SmoothTransformation);
     ui->label_Map_RouteSelect->setPixmap(map_RouteSelect);
 
     // 清空 listView_Start_RouteSelect 和 listView_Destination_RouteSelect
@@ -260,6 +264,7 @@ void MainWindow::SetNumOfTickets_btn()
         UpdateTotalPrice();
     }
 }
+
 void MainWindow::on_spinBox_NumOfTickets_valueChanged(int arg1)
 {
     if (arg1 != order->numOfTickets) {
@@ -367,6 +372,16 @@ void MainWindow::on_btnGoToPurchase_MainMenu_clicked()
     UpdateInfo("请选择起点和终点", info);
 }
 
+void MainWindow::DisplayQueryResult(QStringListModel* model_QueryResult)
+{
+    ui->listView_StationLines->setModel(model_QueryResult);
+    if (model_QueryResult->rowCount() == 0) {
+        UpdateInfo("错误：未找到站点，请检查站点名输入是否正确", warning);
+        return;
+    }
+    UpdateInfo("请在站点名和站点编号中输入其中一个进行查找", info);
+}
+
 void MainWindow::on_btnStartQuery_clicked()
 {
     uint8_t count = 0;
@@ -386,24 +401,13 @@ void MainWindow::on_btnStartQuery_clicked()
     case 1: { // 通过站点名查询
         Query_Name query(ui->lineEdit_StationName_Input->text());
         QStringListModel* model = query.StartQuery();
-        ui->listView_StationLines->setModel(query.StartQuery());
-        if (model->rowCount() == 0) {
-           	UpdateInfo("错误：未找到站点，请检查站点名输入是否正确", warning);
-			return;
-        }
-        UpdateInfo("请在站点名和站点编号中输入其中一个进行查找", info);
+        DisplayQueryResult(model);
     }
         break;
     case 2: { // 通过站点编号查询
         Query_ID query(ui->lineEdit_StationID_Input->text());
         QStringListModel* model = query.StartQuery();
-        ui->listView_StationLines->setModel(query.StartQuery());
-        // 如果 model 项数不为 0 ，则说明找到了站点
-        if (model->rowCount() == 0) {
-            UpdateInfo("错误：未找到站点，请检查站点编号输入是否正确", warning);
-            return;
-        }
-        UpdateInfo("请在站点名和站点编号中输入其中一个进行查找", info);
+        DisplayQueryResult(model);
     }
         break;
     default:
@@ -414,8 +418,14 @@ void MainWindow::on_btnStartQuery_clicked()
 void MainWindow::on_listView_StationLines_clicked(const QModelIndex &index)
 {
     QString displayString = index.data().toString();
-    // listView 显示格式为 “XXXX - X 号线”，需要提取出站点编号，编号可能是 1 位数也可能是 2 位数
-    QString lineID = displayString.mid(displayString.length() - 5, 2);
+    QString lineID;
+    
+    if (displayString.right(2) == "支线") { // 对于 6 号线支线，需要将 lineNo 设置为 61
+        lineID = "61";
+    }
+    else { // 否则，listView 显示格式为 “XXXX - X 号线”，需要提取出站点编号，编号可能是 1 位数也可能是 2 位数
+		lineID = displayString.mid(displayString.length() - 5, 2);
+	}
     // qDebug() << "Select line: " << lineID;
     Line* line = FindLineByNumber(lineID.toInt());
     DisplayMap(line->mapFileName, &map_StationQuery, ui->scrollArea_Map_StationQuery, ui->label_Map_StationQuery);

@@ -55,14 +55,15 @@ private:
 
     /// @brief 清空站点查询界面输入的内容
     void ClearStationQuery();
+    void DisplayQueryResult(QStringListModel* model_QueryResult);
 
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    QString stationListName = ":docs/resources/StationList.csv";
-    QString fareListName = ":docs/resources/FareList.csv";
-    QString mainMapFileName = ":/maps/resources/maps/MetroMap.jpg";
+    const QString stationListName = ":docs/resources/StationList.csv";
+    const QString fareListName = ":docs/resources/FareList.csv";
+    const QString mainMapFileName = ":/maps/resources/maps/MetroMap.jpg";
 
     Order *order;
 

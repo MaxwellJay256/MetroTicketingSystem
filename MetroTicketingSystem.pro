@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     Line.cpp \
     Order.cpp \
+    Query.cpp \
     Station.cpp \
     main.cpp \
     mainwindow.cpp
@@ -18,6 +19,7 @@ SOURCES += \
 HEADERS += \
     Line.h \
     Order.h \
+    Query.h \
     Station.h \
     mainwindow.h
 
