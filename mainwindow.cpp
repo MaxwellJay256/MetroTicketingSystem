@@ -267,7 +267,7 @@ void MainWindow::SetNumOfTickets_btn()
 
 void MainWindow::on_spinBox_NumOfTickets_valueChanged(int arg1)
 {
-    if (arg1 != order->numOfTickets) {
+    if ((uint)arg1 != order->numOfTickets) {
         order->SetNumOfTickets(arg1);
         order->GetTotalPrice();
         UpdateTotalPrice();

@@ -22,7 +22,7 @@
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="pageWelcome">
        <layout class="QGridLayout" name="gridLayout">
@@ -65,16 +65,16 @@
            </font>
           </property>
           <property name="layoutDirection">
-           <enum>Qt::LeftToRight</enum>
+           <enum>Qt::LayoutDirection::LeftToRight</enum>
           </property>
           <property name="tabPosition">
-           <enum>QTabWidget::North</enum>
+           <enum>QTabWidget::TabPosition::North</enum>
           </property>
           <property name="currentIndex">
            <number>0</number>
           </property>
           <property name="elideMode">
-           <enum>Qt::ElideNone</enum>
+           <enum>Qt::TextElideMode::ElideNone</enum>
           </property>
           <widget class="QWidget" name="tabInstruction">
            <attribute name="title">
@@ -84,10 +84,10 @@
             <item>
              <widget class="QTextEdit" name="textEdit_Instruction">
               <property name="frameShape">
-               <enum>QFrame::NoFrame</enum>
+               <enum>QFrame::Shape::NoFrame</enum>
               </property>
               <property name="frameShadow">
-               <enum>QFrame::Plain</enum>
+               <enum>QFrame::Shadow::Plain</enum>
               </property>
               <property name="readOnly">
                <bool>true</bool>
@@ -99,13 +99,13 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Microsoft YaHei UI'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Microsoft YaHei UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;说明&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;本程序为 HITSZ 2023 创新实践课B 项目。&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;程序中的地图、地铁票价及站点信息均来自深圳地铁官网（https://www.szmc.net），信息更新时间截止 2023.8。&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;操作方法&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;点击“进入系统”，然后选择“购票”或“地图查询”以使用对应功能。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;本程序为 HITSZ 2023 创新实践课B 项目。&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;程序中的地图、地铁票价及站点信息均来自深圳地铁官网（https://www.szmc.net），信息更新时间截止 2023.8。&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;操作方法&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;点击“进入系统”，然后选择“购票”或“地图查询”以使用对应功能。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </item>
@@ -124,10 +124,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <item>
              <widget class="QPlainTextEdit" name="plainInfo_Author">
               <property name="frameShape">
-               <enum>QFrame::NoFrame</enum>
+               <enum>QFrame::Shape::NoFrame</enum>
               </property>
               <property name="frameShadow">
-               <enum>QFrame::Plain</enum>
+               <enum>QFrame::Shadow::Plain</enum>
               </property>
               <property name="readOnly">
                <bool>true</bool>
@@ -155,10 +155,10 @@ Version:1.0.1</string>
            <string>欢迎使用地铁自动售票系统！</string>
           </property>
           <property name="textFormat">
-           <enum>Qt::AutoText</enum>
+           <enum>Qt::TextFormat::AutoText</enum>
           </property>
           <property name="alignment">
-           <set>Qt::AlignCenter</set>
+           <set>Qt::AlignmentFlag::AlignCenter</set>
           </property>
          </widget>
         </item>
@@ -180,7 +180,7 @@ Version:1.0.1</string>
            <string>退出系统</string>
           </property>
           <property name="toolButtonStyle">
-           <enum>Qt::ToolButtonTextBesideIcon</enum>
+           <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
           </property>
          </widget>
         </item>
@@ -199,14 +199,14 @@ Version:1.0.1</string>
            <string>主菜单</string>
           </property>
           <property name="alignment">
-           <set>Qt::AlignCenter</set>
+           <set>Qt::AlignmentFlag::AlignCenter</set>
           </property>
          </widget>
         </item>
         <item row="1" column="1" colspan="2">
          <spacer name="verticalSpacer">
           <property name="orientation">
-           <enum>Qt::Vertical</enum>
+           <enum>Qt::Orientation::Vertical</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
@@ -227,7 +227,7 @@ Version:1.0.1</string>
            <string>请选择一个选项</string>
           </property>
           <property name="alignment">
-           <set>Qt::AlignCenter</set>
+           <set>Qt::AlignmentFlag::AlignCenter</set>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout">
            <item>
@@ -298,7 +298,7 @@ Version:1.0.1</string>
            <string>退出系统</string>
           </property>
           <property name="toolButtonStyle">
-           <enum>Qt::ToolButtonTextBesideIcon</enum>
+           <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
           </property>
          </widget>
         </item>
@@ -330,8 +330,8 @@ Version:1.0.1</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>98</width>
-             <height>39</height>
+             <width>808</width>
+             <height>649</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_2">
@@ -346,7 +346,7 @@ Version:1.0.1</string>
                <string>地铁总地图</string>
               </property>
               <property name="alignment">
-               <set>Qt::AlignCenter</set>
+               <set>Qt::AlignmentFlag::AlignCenter</set>
               </property>
              </widget>
             </item>
@@ -369,7 +369,7 @@ Version:1.0.1</string>
            <string>选择乘车路线</string>
           </property>
           <property name="alignment">
-           <set>Qt::AlignCenter</set>
+           <set>Qt::AlignmentFlag::AlignCenter</set>
           </property>
          </widget>
         </item>
@@ -402,7 +402,7 @@ Version:1.0.1</string>
              <x>0</x>
              <y>0</y>
              <width>98</width>
-             <height>39</height>
+             <height>38</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_4">
@@ -417,7 +417,7 @@ Version:1.0.1</string>
                <string>路线图展示</string>
               </property>
               <property name="alignment">
-               <set>Qt::AlignCenter</set>
+               <set>Qt::AlignmentFlag::AlignCenter</set>
               </property>
              </widget>
             </item>
@@ -834,7 +834,7 @@ Version:1.0.1</string>
            <string>支付乘车费用</string>
           </property>
           <property name="alignment">
-           <set>Qt::AlignCenter</set>
+           <set>Qt::AlignmentFlag::AlignCenter</set>
           </property>
          </widget>
         </item>
@@ -947,13 +947,13 @@ Version:1.0.1</string>
                 <bool>false</bool>
                </property>
                <property name="alignment">
-                <set>Qt::AlignCenter</set>
+                <set>Qt::AlignmentFlag::AlignCenter</set>
                </property>
                <property name="readOnly">
                 <bool>true</bool>
                </property>
                <property name="buttonSymbols">
-                <enum>QAbstractSpinBox::NoButtons</enum>
+                <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
                </property>
                <property name="accelerated">
                 <bool>false</bool>
@@ -1048,13 +1048,13 @@ Version:1.0.1</string>
                 <bool>true</bool>
                </property>
                <property name="alignment">
-                <set>Qt::AlignCenter</set>
+                <set>Qt::AlignmentFlag::AlignCenter</set>
                </property>
                <property name="readOnly">
                 <bool>false</bool>
                </property>
                <property name="buttonSymbols">
-                <enum>QAbstractSpinBox::UpDownArrows</enum>
+                <enum>QAbstractSpinBox::ButtonSymbols::UpDownArrows</enum>
                </property>
                <property name="accelerated">
                 <bool>false</bool>
@@ -1176,7 +1176,7 @@ Version:1.0.1</string>
               </widget>
              </item>
              <item row="2" column="0" colspan="2">
-              <widget class="QLabel" name="labe_OtherNumbers">
+              <widget class="QLabel" name="label_OtherNumbers">
                <property name="font">
                 <font>
                  <pointsize>12</pointsize>
@@ -1186,7 +1186,7 @@ Version:1.0.1</string>
                 <string>其他张数（最多20）：</string>
                </property>
                <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                </property>
               </widget>
              </item>
@@ -1460,7 +1460,7 @@ Version:1.0.1</string>
             <item row="0" column="0" colspan="2">
              <spacer name="verticalSpacer_2">
               <property name="orientation">
-               <enum>Qt::Vertical</enum>
+               <enum>Qt::Orientation::Vertical</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
@@ -1523,7 +1523,7 @@ Version:1.0.1</string>
           <item>
            <spacer name="horizontalSpacer_6">
             <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+             <enum>Qt::Orientation::Horizontal</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -1553,7 +1553,7 @@ Version:1.0.1</string>
              <item row="0" column="0">
               <widget class="QStackedWidget" name="stackedWidget_Payments">
                <property name="layoutDirection">
-                <enum>Qt::LeftToRight</enum>
+                <enum>Qt::LayoutDirection::LeftToRight</enum>
                </property>
                <property name="currentIndex">
                 <number>2</number>
@@ -1566,7 +1566,7 @@ Version:1.0.1</string>
                     <string>（请选择一个支付方式）</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -1585,7 +1585,7 @@ Version:1.0.1</string>
                       <string>总票价：</string>
                      </property>
                      <property name="alignment">
-                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -1603,13 +1603,13 @@ Version:1.0.1</string>
                       <bool>false</bool>
                      </property>
                      <property name="alignment">
-                      <set>Qt::AlignCenter</set>
+                      <set>Qt::AlignmentFlag::AlignCenter</set>
                      </property>
                      <property name="readOnly">
                       <bool>true</bool>
                      </property>
                      <property name="buttonSymbols">
-                      <enum>QAbstractSpinBox::NoButtons</enum>
+                      <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
                      </property>
                      <property name="accelerated">
                       <bool>false</bool>
@@ -1674,7 +1674,7 @@ Version:1.0.1</string>
                       <string>已投入：</string>
                      </property>
                      <property name="alignment">
-                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -1687,13 +1687,13 @@ Version:1.0.1</string>
                       <bool>false</bool>
                      </property>
                      <property name="alignment">
-                      <set>Qt::AlignCenter</set>
+                      <set>Qt::AlignmentFlag::AlignCenter</set>
                      </property>
                      <property name="readOnly">
                       <bool>true</bool>
                      </property>
                      <property name="buttonSymbols">
-                      <enum>QAbstractSpinBox::NoButtons</enum>
+                      <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
                      </property>
                      <property name="accelerated">
                       <bool>false</bool>
@@ -1722,7 +1722,7 @@ Version:1.0.1</string>
                       <string>找零：</string>
                      </property>
                      <property name="alignment">
-                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -1735,13 +1735,13 @@ Version:1.0.1</string>
                       <bool>false</bool>
                      </property>
                      <property name="alignment">
-                      <set>Qt::AlignCenter</set>
+                      <set>Qt::AlignmentFlag::AlignCenter</set>
                      </property>
                      <property name="readOnly">
                       <bool>true</bool>
                      </property>
                      <property name="buttonSymbols">
-                      <enum>QAbstractSpinBox::NoButtons</enum>
+                      <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
                      </property>
                      <property name="accelerated">
                       <bool>false</bool>
@@ -1765,7 +1765,7 @@ Version:1.0.1</string>
                  <item>
                   <spacer name="verticalSpacer_3">
                    <property name="orientation">
-                    <enum>Qt::Vertical</enum>
+                    <enum>Qt::Orientation::Vertical</enum>
                    </property>
                    <property name="sizeHint" stdset="0">
                     <size>
@@ -1780,7 +1780,7 @@ Version:1.0.1</string>
                    <item>
                     <spacer name="horizontalSpacer">
                      <property name="orientation">
-                      <enum>Qt::Horizontal</enum>
+                      <enum>Qt::Orientation::Horizontal</enum>
                      </property>
                      <property name="sizeHint" stdset="0">
                       <size>
@@ -1808,7 +1808,7 @@ Version:1.0.1</string>
                       </size>
                      </property>
                      <property name="layoutDirection">
-                      <enum>Qt::RightToLeft</enum>
+                      <enum>Qt::LayoutDirection::RightToLeft</enum>
                      </property>
                      <property name="text">
                       <string>完成支付</string>
@@ -1818,7 +1818,7 @@ Version:1.0.1</string>
                    <item>
                     <spacer name="horizontalSpacer_4">
                      <property name="orientation">
-                      <enum>Qt::Horizontal</enum>
+                      <enum>Qt::Orientation::Horizontal</enum>
                      </property>
                      <property name="sizeHint" stdset="0">
                       <size>
@@ -1840,7 +1840,7 @@ Version:1.0.1</string>
                  </sizepolicy>
                 </property>
                 <property name="layoutDirection">
-                 <enum>Qt::LeftToRight</enum>
+                 <enum>Qt::LayoutDirection::LeftToRight</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_6" stretch="0,0,1,0">
                  <item>
@@ -1849,7 +1849,7 @@ Version:1.0.1</string>
                     <string>请扫描二维码完成支付</string>
                    </property>
                    <property name="alignment">
-                    <set>Qt::AlignCenter</set>
+                    <set>Qt::AlignmentFlag::AlignCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -1864,7 +1864,7 @@ Version:1.0.1</string>
                       <string>总票价：</string>
                      </property>
                      <property name="alignment">
-                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
                      </property>
                     </widget>
                    </item>
@@ -1882,13 +1882,13 @@ Version:1.0.1</string>
                       <bool>false</bool>
                      </property>
                      <property name="alignment">
-                      <set>Qt::AlignCenter</set>
+                      <set>Qt::AlignmentFlag::AlignCenter</set>
                      </property>
                      <property name="readOnly">
                       <bool>true</bool>
                      </property>
                      <property name="buttonSymbols">
-                      <enum>QAbstractSpinBox::NoButtons</enum>
+                      <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
                      </property>
                      <property name="accelerated">
                       <bool>false</bool>
@@ -1909,10 +1909,10 @@ Version:1.0.1</string>
                  <item>
                   <widget class="QFrame" name="frame_QRCode">
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <property name="frameShadow">
-                    <enum>QFrame::Raised</enum>
+                    <enum>QFrame::Shadow::Raised</enum>
                    </property>
                    <layout class="QGridLayout" name="gridLayout_12">
                     <item row="0" column="0">
@@ -1921,7 +1921,7 @@ Version:1.0.1</string>
                        <string>（二维码）</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignmentFlag::AlignCenter</set>
                       </property>
                      </widget>
                     </item>
@@ -1933,7 +1933,7 @@ Version:1.0.1</string>
                    <item>
                     <spacer name="horizontalSpacer_2">
                      <property name="orientation">
-                      <enum>Qt::Horizontal</enum>
+                      <enum>Qt::Orientation::Horizontal</enum>
                      </property>
                      <property name="sizeHint" stdset="0">
                       <size>
@@ -1965,7 +1965,7 @@ Version:1.0.1</string>
                    <item>
                     <spacer name="horizontalSpacer_3">
                      <property name="orientation">
-                      <enum>Qt::Horizontal</enum>
+                      <enum>Qt::Orientation::Horizontal</enum>
                      </property>
                      <property name="sizeHint" stdset="0">
                       <size>
@@ -1987,7 +1987,7 @@ Version:1.0.1</string>
           <item>
            <spacer name="horizontalSpacer_5">
             <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+             <enum>Qt::Orientation::Horizontal</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -2006,7 +2006,7 @@ Version:1.0.1</string>
         <item row="1" column="0" colspan="3">
          <spacer name="verticalSpacer_4">
           <property name="orientation">
-           <enum>Qt::Vertical</enum>
+           <enum>Qt::Orientation::Vertical</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
@@ -2019,7 +2019,7 @@ Version:1.0.1</string>
         <item row="2" column="0">
          <spacer name="horizontalSpacer_9">
           <property name="orientation">
-           <enum>Qt::Horizontal</enum>
+           <enum>Qt::Orientation::Horizontal</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
@@ -2032,10 +2032,10 @@ Version:1.0.1</string>
         <item row="2" column="1">
          <widget class="QFrame" name="frame_Notice_FinishPurchase">
           <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
+           <enum>QFrame::Shape::StyledPanel</enum>
           </property>
           <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
+           <enum>QFrame::Shadow::Raised</enum>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_8" stretch="1,0,0,0">
            <item>
@@ -2049,14 +2049,14 @@ Version:1.0.1</string>
               <string>请及时取走车票和找零！</string>
              </property>
              <property name="alignment">
-              <set>Qt::AlignCenter</set>
+              <set>Qt::AlignmentFlag::AlignCenter</set>
              </property>
             </widget>
            </item>
            <item>
             <spacer name="verticalSpacer_6">
              <property name="orientation">
-              <enum>Qt::Vertical</enum>
+              <enum>Qt::Orientation::Vertical</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -2077,7 +2077,7 @@ Version:1.0.1</string>
               <string>10s 后自动返回主菜单</string>
              </property>
              <property name="alignment">
-              <set>Qt::AlignCenter</set>
+              <set>Qt::AlignmentFlag::AlignCenter</set>
              </property>
             </widget>
            </item>
@@ -2086,7 +2086,7 @@ Version:1.0.1</string>
              <item>
               <spacer name="horizontalSpacer_7">
                <property name="orientation">
-                <enum>Qt::Horizontal</enum>
+                <enum>Qt::Orientation::Horizontal</enum>
                </property>
                <property name="sizeHint" stdset="0">
                 <size>
@@ -2110,23 +2110,23 @@ Version:1.0.1</string>
                 </font>
                </property>
                <property name="focusPolicy">
-                <enum>Qt::TabFocus</enum>
+                <enum>Qt::FocusPolicy::TabFocus</enum>
                </property>
                <property name="text">
                 <string>返回主菜单</string>
                </property>
                <property name="toolButtonStyle">
-                <enum>Qt::ToolButtonTextBesideIcon</enum>
+                <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
                </property>
                <property name="arrowType">
-                <enum>Qt::NoArrow</enum>
+                <enum>Qt::ArrowType::NoArrow</enum>
                </property>
               </widget>
              </item>
              <item>
               <spacer name="horizontalSpacer_8">
                <property name="orientation">
-                <enum>Qt::Horizontal</enum>
+                <enum>Qt::Orientation::Horizontal</enum>
                </property>
                <property name="sizeHint" stdset="0">
                 <size>
@@ -2144,7 +2144,7 @@ Version:1.0.1</string>
         <item row="2" column="2">
          <spacer name="horizontalSpacer_10">
           <property name="orientation">
-           <enum>Qt::Horizontal</enum>
+           <enum>Qt::Orientation::Horizontal</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
@@ -2157,7 +2157,7 @@ Version:1.0.1</string>
         <item row="3" column="0" colspan="3">
          <spacer name="verticalSpacer_5">
           <property name="orientation">
-           <enum>Qt::Vertical</enum>
+           <enum>Qt::Orientation::Vertical</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
@@ -2178,7 +2178,7 @@ Version:1.0.1</string>
            <string>购票成功！</string>
           </property>
           <property name="alignment">
-           <set>Qt::AlignCenter</set>
+           <set>Qt::AlignmentFlag::AlignCenter</set>
           </property>
          </widget>
         </item>
@@ -2197,7 +2197,7 @@ Version:1.0.1</string>
            <string>站点查询</string>
           </property>
           <property name="alignment">
-           <set>Qt::AlignCenter</set>
+           <set>Qt::AlignmentFlag::AlignCenter</set>
           </property>
          </widget>
         </item>
@@ -2281,7 +2281,7 @@ Version:1.0.1</string>
           <item>
            <spacer name="verticalSpacer_8">
             <property name="orientation">
-             <enum>Qt::Vertical</enum>
+             <enum>Qt::Orientation::Vertical</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -2346,7 +2346,7 @@ Version:1.0.1</string>
            <string>线路信息</string>
           </property>
           <property name="alignment">
-           <set>Qt::AlignCenter</set>
+           <set>Qt::AlignmentFlag::AlignCenter</set>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,1">
            <item>
@@ -2383,7 +2383,7 @@ Version:1.0.1</string>
              <item>
               <spacer name="verticalSpacer_7">
                <property name="orientation">
-                <enum>Qt::Vertical</enum>
+                <enum>Qt::Orientation::Vertical</enum>
                </property>
                <property name="sizeHint" stdset="0">
                 <size>
@@ -2406,7 +2406,7 @@ Version:1.0.1</string>
                 <x>0</x>
                 <y>0</y>
                 <width>708</width>
-                <height>601</height>
+                <height>605</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_16">
@@ -2416,7 +2416,7 @@ Version:1.0.1</string>
                   <string/>
                  </property>
                  <property name="alignment">
-                  <set>Qt::AlignCenter</set>
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
                  </property>
                 </widget>
                </item>
@@ -2442,7 +2442,7 @@ Version:1.0.1</string>
     <string>Esc</string>
    </property>
    <property name="menuRole">
-    <enum>QAction::QuitRole</enum>
+    <enum>QAction::MenuRole::QuitRole</enum>
    </property>
   </action>
   <action name="actReturnHome">
